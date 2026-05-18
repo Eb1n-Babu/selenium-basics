@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
+from decouple import config
 
 browser = webdriver.Firefox()
 browser.get("https://dcbookstore.com/")
@@ -11,10 +11,10 @@ element = browser.find_element(By.LINK_TEXT, "Login")
 element.click()
 
 username = browser.find_element(By.NAME,"email")
-username.send_keys("wacot15348@badgerhole.com")
+username.send_keys(config("EMAIL"))
 
 password = browser.find_element(By.NAME,"password")
-password.send_keys(".}5@duj4Wy?=;]P")
+password.send_keys(config("PASSWORD"))
 
 login_button = browser.find_element(By.CLASS_NAME,"blulogin")
 login_button.click()
