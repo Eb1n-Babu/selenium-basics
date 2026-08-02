@@ -4,6 +4,7 @@ from selenium import webdriver
 
 driver = webdriver.Chrome()
 driver.get("https://www.lambdatest.com/")
+driver.save_screenshot("lambdatest.png")
 cookies = {'name' : 'user', 'value' : 'vinayak'}
 driver.add_cookie(cookies)
 
